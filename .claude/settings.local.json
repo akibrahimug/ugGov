@@ -11,7 +11,10 @@
       "Bash(tee /tmp/build.log)",
       "Bash(kill 52997)",
       "Bash(echo \"exit=$?\")",
-      "Bash(NEXT_TELEMETRY_DEBUG=1 pnpm exec next build)"
+      "Bash(NEXT_TELEMETRY_DEBUG=1 pnpm exec next build)",
+      "Bash(pnpm view *)",
+      "Bash(npm view *)",
+      "Bash(rm -rf .next)"
     ]
   }
 }
