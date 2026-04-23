@@ -1,0 +1,107 @@
+.uggov-tag {
+  display: inline-flex;
+  align-items: center;
+  padding: 4px 10px;
+  font-size: var(--uggov-text-xs);
+  font-weight: var(--uggov-weight-semibold);
+  letter-spacing: var(--uggov-tracking-wide);
+  text-transform: uppercase;
+  line-height: 1;
+  border-radius: var(--uggov-radius-full);
+  white-space: nowrap;
+  border: 1px solid transparent;
+}
+
+/* Primary brand — flag yellow on black */
+.uggov-tag--brand {
+  background: var(--uggov-flag-yellow);
+  color: var(--uggov-black);
+  border-color: var(--uggov-flag-yellow-deep);
+}
+
+/* Neutral */
+.uggov-tag--grey {
+  background: var(--uggov-bg-muted);
+  color: var(--uggov-text-subtle);
+  border-color: var(--uggov-border);
+}
+
+/* Semantic success (gold/ochre — in-palette positive) */
+.uggov-tag--green {
+  background: var(--uggov-gold-soft);
+  color: var(--uggov-gold);
+  border-color: rgba(161, 98, 7, 0.28);
+}
+
+/* Yellow — flag yellow */
+.uggov-tag--yellow {
+  background: rgba(252, 220, 4, 0.22);
+  color: #5c4a00;
+  border-color: rgba(201, 168, 0, 0.35);
+}
+
+/* Red — flag red */
+.uggov-tag--red {
+  background: rgba(217, 0, 0, 0.10);
+  color: var(--uggov-flag-red-deep);
+  border-color: rgba(217, 0, 0, 0.28);
+}
+
+/* Neutral dark — replaces the old "blue" variant */
+.uggov-tag--blue {
+  background: var(--uggov-ink-100);
+  color: var(--uggov-ink-800);
+  border-color: var(--uggov-ink-200);
+}
+
+:root[data-theme='dark'] .uggov-tag--brand {
+  background: var(--uggov-flag-yellow);
+  color: var(--uggov-black);
+}
+
+:root[data-theme='dark'] .uggov-tag--green {
+  background: rgba(252, 220, 4, 0.14);
+  color: var(--uggov-flag-yellow);
+  border-color: rgba(252, 220, 4, 0.24);
+}
+
+:root[data-theme='dark'] .uggov-tag--yellow {
+  color: var(--uggov-flag-yellow);
+}
+
+:root[data-theme='dark'] .uggov-tag--red {
+  background: rgba(255, 107, 107, 0.14);
+  color: #ffb3b3;
+  border-color: rgba(255, 107, 107, 0.3);
+}
+
+:root[data-theme='dark'] .uggov-tag--blue {
+  background: rgba(255, 255, 255, 0.08);
+  color: var(--uggov-ink-100);
+  border-color: rgba(255, 255, 255, 0.12);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme='light']) .uggov-tag--brand {
+    background: var(--uggov-flag-yellow);
+    color: var(--uggov-black);
+  }
+  :root:not([data-theme='light']) .uggov-tag--green {
+    background: rgba(252, 220, 4, 0.14);
+    color: var(--uggov-flag-yellow);
+    border-color: rgba(252, 220, 4, 0.24);
+  }
+  :root:not([data-theme='light']) .uggov-tag--yellow {
+    color: var(--uggov-flag-yellow);
+  }
+  :root:not([data-theme='light']) .uggov-tag--red {
+    background: rgba(255, 107, 107, 0.14);
+    color: #ffb3b3;
+    border-color: rgba(255, 107, 107, 0.3);
+  }
+  :root:not([data-theme='light']) .uggov-tag--blue {
+    background: rgba(255, 255, 255, 0.08);
+    color: var(--uggov-ink-100);
+    border-color: rgba(255, 255, 255, 0.12);
+  }
+}

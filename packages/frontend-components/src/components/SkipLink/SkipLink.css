@@ -1,0 +1,20 @@
+.uggov-skip-link {
+  position: absolute;
+  left: -9999px;
+  top: 0;
+  padding: var(--uggov-space-3) var(--uggov-space-5);
+  background: var(--uggov-ink-900);
+  color: var(--uggov-white);
+  text-decoration: none;
+  font-weight: var(--uggov-weight-semibold);
+  border-radius: var(--uggov-radius-full);
+  z-index: 1000;
+}
+
+.uggov-skip-link:focus {
+  left: var(--uggov-space-3);
+  top: var(--uggov-space-3);
+  box-shadow: var(--uggov-shadow-lg);
+  outline: 3px solid var(--uggov-flag-yellow);
+  outline-offset: 2px;
+}

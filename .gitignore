@@ -1,0 +1,42 @@
+node_modules
+.pnpm-store
+
+# Build artifacts
+dist
+build
+.next
+.turbo
+out
+*.tsbuildinfo
+
+# Sanity
+.sanity
+
+# Env
+.env
+.env.local
+.env.*.local
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Editor
+.vscode/*
+!.vscode/extensions.json
+!.vscode/settings.json
+.idea
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Coverage
+coverage
+.nyc_output
+
+# Temp
+.cache

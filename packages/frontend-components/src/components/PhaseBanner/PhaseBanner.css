@@ -1,0 +1,32 @@
+.uggov-phase-banner {
+  background: transparent;
+  border-bottom: 1px solid var(--uggov-border);
+}
+
+.uggov-phase-banner__content {
+  max-width: var(--uggov-max);
+  margin-inline: auto;
+  padding: var(--uggov-space-3) var(--uggov-space-5);
+  display: flex;
+  align-items: center;
+  gap: var(--uggov-space-3);
+  font-size: var(--uggov-text-sm);
+  color: var(--uggov-text-subtle);
+}
+
+@media (min-width: 900px) {
+  .uggov-phase-banner__content {
+    padding-inline: var(--uggov-space-8);
+  }
+}
+
+.uggov-phase-banner__link {
+  color: var(--uggov-link);
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 2px;
+}
+
+.uggov-phase-banner__link:hover {
+  color: var(--uggov-link-hover);
+}

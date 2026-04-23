@@ -1,0 +1,10 @@
+.uggov-inset-text {
+  padding: var(--uggov-space-5) var(--uggov-space-6);
+  margin: var(--uggov-space-6) 0;
+  border: 1px solid var(--uggov-border);
+  border-left: 3px solid var(--uggov-flag-red);
+  background: var(--uggov-bg-muted);
+  border-radius: var(--uggov-radius-md);
+  color: var(--uggov-text);
+  line-height: var(--uggov-leading-relaxed);
+}

@@ -1,0 +1,31 @@
+{
+  "name": "@ug-gov/frontend",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "next dev --turbopack --port 3000",
+    "build": "next build",
+    "start": "next start",
+    "typecheck": "tsc --noEmit",
+    "clean": "rm -rf .next .turbo"
+  },
+  "dependencies": {
+    "@ug-gov/content-schemas": "workspace:*",
+    "@ug-gov/frontend-components": "workspace:*",
+    "@ug-gov/seed-content": "workspace:*",
+    "@ug-gov/ui-tokens": "workspace:*",
+    "clsx": "2.1.1",
+    "leaflet": "1.9.4",
+    "next": "15.1.5",
+    "react": "19.0.0",
+    "react-dom": "19.0.0"
+  },
+  "devDependencies": {
+    "@types/leaflet": "1.9.16",
+    "@types/node": "22.10.5",
+    "@types/react": "19.0.0",
+    "@types/react-dom": "19.0.0",
+    "typescript": "5.7.3"
+  }
+}

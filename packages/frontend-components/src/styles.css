@@ -1,0 +1,18 @@
+/* Aggregated component styles. Consumers import this once. */
+@import './components/SkipLink/SkipLink.css';
+@import './components/Header/Header.css';
+@import './components/Footer/Footer.css';
+@import './components/Button/Button.css';
+@import './components/PhaseBanner/PhaseBanner.css';
+@import './components/Breadcrumbs/Breadcrumbs.css';
+@import './components/Tag/Tag.css';
+@import './components/NotificationBanner/NotificationBanner.css';
+@import './components/SummaryList/SummaryList.css';
+@import './components/InsetText/InsetText.css';
+@import './components/WarningText/WarningText.css';
+@import './components/Card/Card.css';
+@import './components/Container/Container.css';
+@import './components/Link/Link.css';
+@import './components/SearchBox/SearchBox.css';
+@import './components/ThemeToggle/ThemeToggle.css';
+@import './components/Form/Form.css';

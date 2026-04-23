@@ -1,0 +1,60 @@
+.uggov-notification {
+  margin-bottom: var(--uggov-space-6);
+  border: 1px solid var(--uggov-border);
+  background: var(--uggov-bg-elevated);
+  border-radius: var(--uggov-radius-lg);
+  overflow: hidden;
+  box-shadow: var(--uggov-shadow-sm);
+}
+
+.uggov-notification__header {
+  padding: var(--uggov-space-3) var(--uggov-space-5);
+  font-weight: var(--uggov-weight-semibold);
+}
+
+.uggov-notification--info .uggov-notification__header {
+  background: var(--uggov-ink-50);
+  color: var(--uggov-ink-900);
+}
+.uggov-notification--success .uggov-notification__header {
+  background: var(--uggov-gold-soft);
+  color: var(--uggov-gold);
+}
+.uggov-notification--warning .uggov-notification__header {
+  background: rgba(252, 220, 4, 0.22);
+  color: #5c4a00;
+}
+.uggov-notification--error .uggov-notification__header {
+  background: rgba(217, 0, 0, 0.10);
+  color: var(--uggov-flag-red-deep);
+}
+
+.uggov-notification__title {
+  font-size: var(--uggov-text-base);
+  margin: 0;
+  color: inherit;
+  letter-spacing: var(--uggov-tracking-snug);
+}
+
+.uggov-notification__content {
+  padding: var(--uggov-space-4) var(--uggov-space-5);
+  font-size: var(--uggov-text-base);
+  color: var(--uggov-text);
+}
+
+:root[data-theme='dark'] .uggov-notification--info .uggov-notification__header {
+  background: rgba(255, 255, 255, 0.06);
+  color: var(--uggov-ink-100);
+}
+:root[data-theme='dark'] .uggov-notification--success .uggov-notification__header {
+  background: rgba(252, 220, 4, 0.14);
+  color: var(--uggov-flag-yellow);
+}
+:root[data-theme='dark'] .uggov-notification--warning .uggov-notification__header {
+  background: rgba(252, 220, 4, 0.16);
+  color: var(--uggov-flag-yellow);
+}
+:root[data-theme='dark'] .uggov-notification--error .uggov-notification__header {
+  background: rgba(255, 107, 107, 0.14);
+  color: #ffb3b3;
+}

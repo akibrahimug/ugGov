@@ -1,0 +1,86 @@
+.uggov-searchbox {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  max-width: 720px;
+  background: var(--uggov-bg-elevated);
+  border: 1px solid var(--uggov-border);
+  border-radius: var(--uggov-radius-full);
+  box-shadow: var(--uggov-shadow-sm);
+  overflow: hidden;
+  transition:
+    box-shadow var(--uggov-dur-base) var(--uggov-ease-in-out),
+    border-color var(--uggov-dur-fast) var(--uggov-ease-in-out),
+    transform var(--uggov-dur-base) var(--uggov-ease-spring);
+}
+
+.uggov-searchbox:focus-within {
+  box-shadow: var(--uggov-shadow-md), 0 0 0 4px rgba(252, 220, 4, 0.4);
+  border-color: var(--uggov-black);
+  transform: translateY(-1px);
+}
+
+.uggov-searchbox__icon {
+  display: inline-flex;
+  padding-left: var(--uggov-space-5);
+  color: var(--uggov-text-muted);
+}
+
+.uggov-searchbox__input {
+  flex: 1;
+  min-width: 0;
+  padding: var(--uggov-space-3) var(--uggov-space-4);
+  font: inherit;
+  font-size: var(--uggov-text-base);
+  background: transparent;
+  border: none;
+  outline: none;
+  color: var(--uggov-text);
+}
+
+/* The outer wrapper owns the focus style; suppress the global focus-visible
+   ring on the input so we don't stack an inner ring inside the container. */
+.uggov-searchbox__input:focus,
+.uggov-searchbox__input:focus-visible {
+  outline: none;
+  box-shadow: none;
+}
+
+.uggov-searchbox__input::placeholder {
+  color: var(--uggov-text-muted);
+}
+
+.uggov-searchbox--lg .uggov-searchbox__input {
+  padding: var(--uggov-space-4) var(--uggov-space-5);
+  font-size: var(--uggov-text-lg);
+}
+
+.uggov-searchbox__button {
+  margin: 4px;
+  padding: var(--uggov-space-2) var(--uggov-space-5);
+  background: var(--uggov-black);
+  color: var(--uggov-flag-yellow);
+  font-weight: var(--uggov-weight-semibold);
+  border-radius: var(--uggov-radius-full);
+  cursor: pointer;
+  transition:
+    background-color var(--uggov-dur-fast) var(--uggov-ease-in-out),
+    color var(--uggov-dur-fast) var(--uggov-ease-in-out),
+    transform var(--uggov-dur-base) var(--uggov-ease-spring);
+}
+
+.uggov-searchbox--lg .uggov-searchbox__button {
+  padding: var(--uggov-space-3) var(--uggov-space-6);
+  font-size: var(--uggov-text-base);
+}
+
+/* Hover is the same look as rest (since rest is already black + yellow)
+   — we add a subtle lift so there is tactile feedback. */
+.uggov-searchbox__button:hover {
+  transform: translateY(-1px);
+}
+
+.uggov-searchbox__button:active {
+  transform: translateY(0) scale(0.97);
+}

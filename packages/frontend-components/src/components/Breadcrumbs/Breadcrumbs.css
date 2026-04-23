@@ -1,0 +1,46 @@
+.uggov-breadcrumbs {
+  font-size: var(--uggov-text-sm);
+  margin-bottom: var(--uggov-space-6);
+}
+
+.uggov-breadcrumbs__list {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.uggov-breadcrumbs__item {
+  display: inline-flex;
+  align-items: center;
+  color: var(--uggov-text-muted);
+}
+
+.uggov-breadcrumbs__item:not(:last-child)::after {
+  content: '›';
+  margin: 0 var(--uggov-space-2);
+  color: var(--uggov-text-muted);
+  opacity: 0.6;
+}
+
+.uggov-breadcrumbs__link {
+  color: var(--uggov-text-muted);
+  text-decoration: none;
+  transition: color var(--uggov-dur-fast) var(--uggov-ease-in-out);
+}
+
+.uggov-breadcrumbs__link:hover {
+  color: var(--uggov-text);
+}
+
+.uggov-breadcrumbs--inverse .uggov-breadcrumbs__item {
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.uggov-breadcrumbs--inverse .uggov-breadcrumbs__link,
+.uggov-breadcrumbs--inverse .uggov-breadcrumbs__link:visited {
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.uggov-breadcrumbs--inverse .uggov-breadcrumbs__link:hover {
+  color: #fff;
+}

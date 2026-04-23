@@ -1,0 +1,30 @@
+.uggov-warning-text {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--uggov-space-3);
+  padding: var(--uggov-space-4) var(--uggov-space-5);
+  margin: var(--uggov-space-6) 0;
+  background: rgba(252, 220, 4, 0.14);
+  border: 1px solid rgba(201, 168, 0, 0.35);
+  border-radius: var(--uggov-radius-md);
+}
+
+.uggov-warning-text__icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  flex-shrink: 0;
+  border-radius: var(--uggov-radius-full);
+  background: var(--uggov-black);
+  color: var(--uggov-flag-yellow);
+  font-weight: var(--uggov-weight-bold);
+}
+
+.uggov-warning-text__text {
+  color: var(--uggov-text);
+  line-height: var(--uggov-leading-normal);
+  padding-top: 4px;
+  font-weight: var(--uggov-weight-medium);
+}

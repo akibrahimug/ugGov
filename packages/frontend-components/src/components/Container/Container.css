@@ -1,0 +1,23 @@
+.uggov-container {
+  margin-inline: auto;
+  padding-inline: var(--uggov-space-5);
+  width: 100%;
+}
+
+@media (min-width: 900px) {
+  .uggov-container {
+    padding-inline: var(--uggov-space-8);
+  }
+}
+
+.uggov-container--content {
+  max-width: var(--uggov-content-max);
+}
+
+.uggov-container--wide {
+  max-width: var(--uggov-wide-max);
+}
+
+.uggov-container--prose {
+  max-width: var(--uggov-prose-max);
+}

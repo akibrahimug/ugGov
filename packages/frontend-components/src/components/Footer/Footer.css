@@ -1,0 +1,95 @@
+.uggov-footer {
+  position: relative;
+  margin-top: var(--uggov-space-24);
+  background: var(--uggov-bg-muted);
+  border-top: 4px solid var(--uggov-flag-yellow);
+}
+
+.uggov-footer__glow {
+  display: none;
+}
+
+.uggov-footer__inner {
+  position: relative;
+  max-width: var(--uggov-max);
+  margin-inline: auto;
+  padding: var(--uggov-space-16) var(--uggov-space-5) var(--uggov-space-8);
+}
+
+@media (min-width: 900px) {
+  .uggov-footer__inner {
+    padding: var(--uggov-space-20) var(--uggov-space-8) var(--uggov-space-8);
+  }
+}
+
+.uggov-footer__brand {
+  margin-bottom: var(--uggov-space-10);
+  max-width: 56ch;
+}
+
+.uggov-footer__title {
+  font-size: clamp(1.5rem, 2.5vw + 1rem, 2rem);
+  font-weight: var(--uggov-weight-bold);
+  letter-spacing: var(--uggov-tracking-tight);
+  margin-bottom: var(--uggov-space-2);
+}
+
+.uggov-footer__tagline {
+  color: var(--uggov-text-muted);
+  font-style: italic;
+  letter-spacing: var(--uggov-tracking-wide);
+}
+
+.uggov-footer__groups {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: var(--uggov-space-8) var(--uggov-space-10);
+  margin-bottom: var(--uggov-space-10);
+}
+
+.uggov-footer__group-heading {
+  font-size: var(--uggov-text-xs);
+  font-weight: var(--uggov-weight-semibold);
+  color: var(--uggov-text-muted);
+  text-transform: uppercase;
+  letter-spacing: var(--uggov-tracking-wider);
+  margin-bottom: var(--uggov-space-4);
+}
+
+.uggov-footer__group-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--uggov-space-3);
+}
+
+.uggov-footer__link {
+  color: var(--uggov-text-subtle);
+  font-size: var(--uggov-text-base);
+  text-decoration: none;
+  transition: color var(--uggov-dur-fast) var(--uggov-ease-in-out);
+}
+
+.uggov-footer__link:hover {
+  color: var(--uggov-text);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.uggov-footer__bottom {
+  display: flex;
+  gap: var(--uggov-space-4);
+  justify-content: space-between;
+  padding-top: var(--uggov-space-6);
+  border-top: 1px solid var(--uggov-border);
+  font-size: var(--uggov-text-sm);
+  color: var(--uggov-text-muted);
+  flex-wrap: wrap;
+}
+
+.uggov-footer__licence {
+  max-width: 48rem;
+}
+
+.uggov-footer__copyright {
+  white-space: nowrap;
+}

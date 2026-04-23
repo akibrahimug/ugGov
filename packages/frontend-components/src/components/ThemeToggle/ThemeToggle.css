@@ -1,0 +1,26 @@
+.uggov-theme-toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: var(--uggov-radius-full);
+  border: 1px solid transparent;
+  color: var(--uggov-text-subtle);
+  background: transparent;
+  transition:
+    background-color var(--uggov-dur-fast) var(--uggov-ease-in-out),
+    color var(--uggov-dur-fast) var(--uggov-ease-in-out),
+    border-color var(--uggov-dur-fast) var(--uggov-ease-in-out),
+    transform var(--uggov-dur-base) var(--uggov-ease-spring);
+}
+
+.uggov-theme-toggle:hover {
+  background: var(--uggov-black);
+  color: var(--uggov-flag-yellow);
+  transform: translateY(-1px);
+}
+
+.uggov-theme-toggle:active {
+  transform: translateY(0) scale(0.94);
+}

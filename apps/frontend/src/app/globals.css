@@ -1,0 +1,1168 @@
+/* App-level styles. Tokens + component CSS come from packages. */
+
+html {
+  font-family: var(--uggov-font-loaded, var(--uggov-font-base));
+}
+
+.uggov-main {
+  min-height: 40vh;
+}
+
+/* ======================================================
+   HERO — flat, subtle background shade
+   ====================================================== */
+.uggov-hero {
+  position: relative;
+  padding-block: clamp(var(--uggov-space-12), 10vw, var(--uggov-space-24))
+    clamp(var(--uggov-space-12), 9vw, var(--uggov-space-20));
+  background: var(--uggov-bg-subtle);
+  border-bottom: 1px solid var(--uggov-border);
+}
+
+.uggov-hero__inner {
+  position: relative;
+  max-width: var(--uggov-max);
+  margin-inline: auto;
+  padding-inline: var(--uggov-space-5);
+}
+
+@media (min-width: 900px) {
+  .uggov-hero__inner {
+    padding-inline: var(--uggov-space-8);
+  }
+}
+
+.uggov-hero__eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--uggov-space-2);
+  padding: 6px 12px 6px 6px;
+  margin-bottom: var(--uggov-space-5);
+  background: var(--uggov-bg-elevated);
+  border: 1px solid var(--uggov-border);
+  border-radius: var(--uggov-radius-full);
+  font-size: var(--uggov-text-xs);
+  font-weight: var(--uggov-weight-semibold);
+  color: var(--uggov-text-subtle);
+  letter-spacing: var(--uggov-tracking-wider);
+  text-transform: uppercase;
+}
+
+.uggov-hero__eyebrow-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 999px;
+  background: var(--uggov-flag-red);
+  margin-left: 6px;
+}
+
+.uggov-hero__title {
+  font-size: clamp(2.25rem, 5vw + 1rem, var(--uggov-text-6xl));
+  font-weight: var(--uggov-weight-bold);
+  line-height: var(--uggov-leading-tight);
+  letter-spacing: var(--uggov-tracking-tight);
+  max-width: 22ch;
+  margin-bottom: var(--uggov-space-5);
+}
+
+.uggov-hero__title-accent {
+  color: var(--uggov-accent-strong);
+}
+
+.uggov-hero__lede {
+  font-size: clamp(1.125rem, 1.2vw + 0.75rem, 1.5rem);
+  line-height: var(--uggov-leading-normal);
+  color: var(--uggov-text-subtle);
+  max-width: 52ch;
+  margin-bottom: var(--uggov-space-8);
+}
+
+.uggov-hero__search {
+  max-width: 640px;
+  margin-bottom: var(--uggov-space-6);
+}
+
+.uggov-hero__quick {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--uggov-space-2);
+  align-items: center;
+}
+
+.uggov-hero__quick-label {
+  font-size: var(--uggov-text-sm);
+  color: var(--uggov-text-muted);
+  margin-right: var(--uggov-space-2);
+}
+
+/* ======================================================
+   SECTIONS
+   ====================================================== */
+.uggov-section {
+  padding-block: clamp(var(--uggov-space-16), 10vw, var(--uggov-space-32));
+}
+
+.uggov-section--compact {
+  padding-block: var(--uggov-space-12);
+}
+
+.uggov-section--muted {
+  background: var(--uggov-bg-muted);
+}
+
+.uggov-section__inner {
+  max-width: var(--uggov-max);
+  margin-inline: auto;
+  padding-inline: var(--uggov-space-5);
+}
+
+@media (min-width: 900px) {
+  .uggov-section__inner {
+    padding-inline: var(--uggov-space-8);
+  }
+}
+
+.uggov-section__header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: var(--uggov-space-6);
+  flex-wrap: wrap;
+  margin-bottom: var(--uggov-space-10);
+}
+
+.uggov-section__eyebrow {
+  font-size: var(--uggov-text-xs);
+  font-weight: var(--uggov-weight-semibold);
+  text-transform: uppercase;
+  letter-spacing: var(--uggov-tracking-wider);
+  color: var(--uggov-text-muted);
+  margin-bottom: var(--uggov-space-3);
+}
+
+.uggov-section__title {
+  font-size: clamp(1.75rem, 2.5vw + 1rem, 2.75rem);
+  font-weight: var(--uggov-weight-bold);
+  letter-spacing: var(--uggov-tracking-tight);
+  max-width: 20ch;
+  line-height: var(--uggov-leading-tight);
+}
+
+.uggov-section__subtitle {
+  font-size: var(--uggov-text-lg);
+  color: var(--uggov-text-muted);
+  max-width: 46ch;
+  margin-top: var(--uggov-space-3);
+}
+
+/* In-article section headings on detail pages — same scale as landing section titles. */
+.uggov-section__heading {
+  font-size: clamp(1.75rem, 2.5vw + 1rem, 2.5rem);
+  font-weight: var(--uggov-weight-bold);
+  letter-spacing: var(--uggov-tracking-tight);
+  line-height: var(--uggov-leading-tight);
+  margin-bottom: var(--uggov-space-6);
+  text-wrap: balance;
+}
+
+/* ======================================================
+   GRIDS
+   ====================================================== */
+.uggov-grid {
+  display: grid;
+  gap: var(--uggov-space-5);
+}
+
+.uggov-grid--2 {
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+}
+
+.uggov-grid--3 {
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+}
+
+@media (min-width: 900px) {
+  .uggov-grid--3 {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.uggov-grid--4 {
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+}
+
+/* Horizontal scroll rail (mobile-first, snap) */
+.uggov-rail {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: min(88%, 320px);
+  gap: var(--uggov-space-5);
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  padding: var(--uggov-space-2) var(--uggov-space-5);
+  margin-inline: calc(var(--uggov-space-5) * -1);
+  scrollbar-width: none;
+}
+
+.uggov-rail::-webkit-scrollbar {
+  display: none;
+}
+
+.uggov-rail > * {
+  scroll-snap-align: start;
+}
+
+@media (min-width: 900px) {
+  .uggov-rail {
+    display: grid;
+    grid-auto-flow: row;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    padding: 0;
+    margin-inline: 0;
+    overflow: visible;
+  }
+}
+
+/* ======================================================
+   CONTENT LAYOUT (body + aside)
+   ====================================================== */
+.uggov-content-layout {
+  display: grid;
+  gap: var(--uggov-space-10);
+  max-width: var(--uggov-max);
+  margin-inline: auto;
+  padding: var(--uggov-space-10) var(--uggov-space-5);
+}
+
+@media (min-width: 900px) {
+  .uggov-content-layout {
+    grid-template-columns: minmax(0, 2fr) minmax(0, 1fr);
+    padding: var(--uggov-space-16) var(--uggov-space-8);
+    gap: var(--uggov-space-16);
+  }
+}
+
+.uggov-content-layout__aside {
+  background: var(--uggov-bg-elevated);
+  border: 1px solid var(--uggov-border);
+  border-radius: var(--uggov-radius-xl);
+  padding: var(--uggov-space-6);
+  align-self: start;
+  position: sticky;
+  top: 96px;
+}
+
+.uggov-content-layout__aside h2 {
+  font-size: var(--uggov-text-base);
+  font-weight: var(--uggov-weight-semibold);
+  color: var(--uggov-text-muted);
+  text-transform: uppercase;
+  letter-spacing: var(--uggov-tracking-wider);
+  margin-bottom: var(--uggov-space-4);
+}
+
+.uggov-content-layout__aside ul {
+  display: flex;
+  flex-direction: column;
+  gap: var(--uggov-space-2);
+}
+
+.uggov-content-layout__aside ul a {
+  color: var(--uggov-text);
+  text-decoration: none;
+}
+
+.uggov-content-layout__aside ul a:hover {
+  color: var(--uggov-link);
+}
+
+/* ======================================================
+   PAGE HERO (detail pages) — same scale as landing hero
+   ====================================================== */
+.uggov-page-hero {
+  position: relative;
+  padding-block: clamp(var(--uggov-space-12), 10vw, var(--uggov-space-24))
+    clamp(var(--uggov-space-12), 9vw, var(--uggov-space-20));
+  background: var(--uggov-bg-subtle);
+  border-bottom: 1px solid var(--uggov-border);
+}
+
+/* --tinted kept for backwards-compat; same styling as base */
+.uggov-page-hero--tinted {
+  background: var(--uggov-bg-subtle);
+}
+
+.uggov-page-hero__inner {
+  max-width: var(--uggov-max);
+  margin-inline: auto;
+  padding-inline: var(--uggov-space-5);
+}
+
+@media (min-width: 900px) {
+  .uggov-page-hero__inner {
+    padding-inline: var(--uggov-space-8);
+  }
+}
+
+.uggov-page-hero__eyebrow {
+  font-size: var(--uggov-text-xs);
+  font-weight: var(--uggov-weight-semibold);
+  color: var(--uggov-text-muted);
+  text-transform: uppercase;
+  letter-spacing: var(--uggov-tracking-wider);
+  margin-bottom: var(--uggov-space-4);
+}
+
+.uggov-page-hero__title {
+  font-size: clamp(2.25rem, 5vw + 1rem, var(--uggov-text-6xl));
+  font-weight: var(--uggov-weight-bold);
+  letter-spacing: var(--uggov-tracking-tight);
+  line-height: var(--uggov-leading-tight);
+  margin-bottom: var(--uggov-space-5);
+  max-width: 28ch;
+  text-wrap: balance;
+}
+
+.uggov-page-hero__lede {
+  font-size: clamp(1.125rem, 1.2vw + 0.75rem, 1.5rem);
+  color: var(--uggov-text-subtle);
+  max-width: 58ch;
+  line-height: var(--uggov-leading-normal);
+}
+
+.uggov-page-hero__actions {
+  display: flex;
+  gap: var(--uggov-space-3);
+  margin-top: var(--uggov-space-6);
+  flex-wrap: wrap;
+}
+
+/* ======================================================
+   PROSE
+   ====================================================== */
+.uggov-prose {
+  max-width: var(--uggov-prose-max);
+  font-size: var(--uggov-text-lg);
+  line-height: var(--uggov-leading-relaxed);
+  color: var(--uggov-text);
+}
+
+.uggov-prose > * + * {
+  margin-top: var(--uggov-space-5);
+}
+
+.uggov-prose h2 {
+  font-size: var(--uggov-text-2xl);
+  line-height: var(--uggov-leading-snug);
+  letter-spacing: var(--uggov-tracking-tight);
+  margin-top: var(--uggov-space-10);
+}
+
+.uggov-prose h3 {
+  font-size: var(--uggov-text-xl);
+  line-height: var(--uggov-leading-snug);
+  margin-top: var(--uggov-space-8);
+}
+
+.uggov-prose h4 {
+  font-size: var(--uggov-text-lg);
+  margin-top: var(--uggov-space-6);
+}
+
+.uggov-prose__list {
+  padding-left: var(--uggov-space-5);
+  list-style: disc;
+}
+
+.uggov-prose__list > li + li {
+  margin-top: var(--uggov-space-2);
+}
+
+.uggov-prose blockquote {
+  border-left: 3px solid var(--uggov-flag-red);
+  padding-left: var(--uggov-space-5);
+  color: var(--uggov-text-muted);
+  font-style: italic;
+}
+
+.uggov-prose a {
+  color: var(--uggov-link);
+  border-bottom: 1px solid rgba(185, 28, 28, 0.3);
+  text-decoration: none;
+  transition: border-color var(--uggov-dur-fast) var(--uggov-ease-in-out);
+}
+
+.uggov-prose a:hover {
+  border-bottom-color: currentColor;
+}
+
+/* ======================================================
+   CTA BLOCK — flat black with a yellow flag stripe
+   ====================================================== */
+.uggov-cta {
+  position: relative;
+  overflow: hidden;
+  padding: clamp(var(--uggov-space-12), 6vw, var(--uggov-space-20));
+  margin: var(--uggov-space-16) auto;
+  border-radius: var(--uggov-radius-lg);
+  background: var(--uggov-ink-900);
+  color: var(--uggov-text-inverse);
+  max-width: var(--uggov-wide-max);
+}
+
+.uggov-cta::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: var(--uggov-flag-yellow);
+}
+
+.uggov-cta__title {
+  font-size: clamp(2rem, 3vw + 1rem, 3.5rem);
+  font-weight: var(--uggov-weight-bold);
+  letter-spacing: var(--uggov-tracking-tight);
+  line-height: var(--uggov-leading-tight);
+  max-width: 20ch;
+  margin-bottom: var(--uggov-space-4);
+  color: var(--uggov-white);
+}
+
+.uggov-cta__lede {
+  font-size: var(--uggov-text-lg);
+  color: rgba(255, 255, 255, 0.75);
+  max-width: 52ch;
+  margin-bottom: var(--uggov-space-8);
+}
+
+/* ======================================================
+   UTILITIES
+   ====================================================== */
+.uggov-stack > * + * {
+  margin-top: var(--uggov-space-4);
+}
+
+.uggov-stack--lg > * + * {
+  margin-top: var(--uggov-space-8);
+}
+
+.uggov-stack--xl > * + * {
+  margin-top: var(--uggov-space-12);
+}
+
+.uggov-flex-row {
+  display: flex;
+  gap: var(--uggov-space-3);
+  flex-wrap: wrap;
+}
+
+.uggov-meta {
+  display: inline-flex;
+  gap: var(--uggov-space-3);
+  flex-wrap: wrap;
+  font-size: var(--uggov-text-sm);
+  color: var(--uggov-text-muted);
+  align-items: center;
+}
+
+.uggov-article-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.uggov-article-list > li {
+  padding: var(--uggov-space-6) 0;
+  border-bottom: 1px solid var(--uggov-border);
+}
+
+.uggov-article-list > li:first-child {
+  padding-top: 0;
+}
+
+.uggov-article-list > li:last-child {
+  border-bottom: none;
+}
+
+.uggov-article-list__title {
+  font-size: var(--uggov-text-xl);
+  font-weight: var(--uggov-weight-semibold);
+  letter-spacing: var(--uggov-tracking-snug);
+  line-height: var(--uggov-leading-snug);
+  margin: var(--uggov-space-2) 0;
+  text-wrap: balance;
+}
+
+.uggov-article-list__title a {
+  color: var(--uggov-text);
+  text-decoration: none;
+}
+
+.uggov-article-list__title a:hover {
+  color: var(--uggov-link);
+}
+
+.uggov-article-list__summary {
+  color: var(--uggov-text-muted);
+  max-width: 68ch;
+  line-height: var(--uggov-leading-normal);
+}
+
+/* ======================================================
+   DEMO BANNER — visible warning that the form is a prototype
+   ====================================================== */
+.uggov-demo-banner {
+  display: flex;
+  gap: var(--uggov-space-4);
+  align-items: flex-start;
+  padding: var(--uggov-space-4) var(--uggov-space-5);
+  background: var(--uggov-flag-yellow);
+  color: var(--uggov-black);
+  border-radius: var(--uggov-radius-md);
+  margin-bottom: var(--uggov-space-8);
+  border: 1px solid rgba(10, 10, 11, 0.12);
+}
+
+.uggov-demo-banner__label {
+  flex: 0 0 auto;
+  display: inline-block;
+  padding: 4px 10px;
+  background: var(--uggov-black);
+  color: var(--uggov-flag-yellow);
+  font-size: var(--uggov-text-xs);
+  font-weight: var(--uggov-weight-bold);
+  border-radius: var(--uggov-radius-full);
+  text-transform: uppercase;
+  letter-spacing: var(--uggov-tracking-wider);
+  line-height: 1.5;
+}
+
+.uggov-demo-banner__body {
+  font-size: var(--uggov-text-sm);
+  line-height: var(--uggov-leading-normal);
+}
+
+.uggov-demo-banner__body p {
+  margin-bottom: var(--uggov-space-2);
+  color: var(--uggov-black);
+}
+
+.uggov-demo-banner__link {
+  color: var(--uggov-black);
+  font-weight: var(--uggov-weight-semibold);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.uggov-demo-banner__link:hover {
+  text-decoration-thickness: 2px;
+}
+
+/* ======================================================
+   STEP PROGRESS — segmented bar for multi-step wizards
+   ====================================================== */
+.uggov-step-progress {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: 1fr;
+  gap: var(--uggov-space-2);
+  margin-bottom: var(--uggov-space-8);
+}
+
+.uggov-step-progress__step {
+  display: flex;
+  flex-direction: column;
+  gap: var(--uggov-space-2);
+}
+
+.uggov-step-progress__bar {
+  height: 4px;
+  background: var(--uggov-bg-muted);
+  border-radius: var(--uggov-radius-full);
+  transition: background-color var(--uggov-dur-base) var(--uggov-ease-in-out);
+}
+
+.uggov-step-progress__bar--active {
+  background: var(--uggov-flag-yellow);
+}
+
+.uggov-step-progress__bar--done {
+  background: var(--uggov-black);
+}
+
+.uggov-step-progress__label {
+  display: flex;
+  align-items: baseline;
+  gap: var(--uggov-space-2);
+  font-size: var(--uggov-text-xs);
+  color: var(--uggov-text-muted);
+  letter-spacing: var(--uggov-tracking-wider);
+  text-transform: uppercase;
+  font-weight: var(--uggov-weight-semibold);
+}
+
+.uggov-step-progress__label--on {
+  color: var(--uggov-text);
+}
+
+.uggov-step-progress__num {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 22px;
+  height: 22px;
+  padding: 0 6px;
+  border-radius: var(--uggov-radius-full);
+  background: var(--uggov-bg-muted);
+  color: var(--uggov-text-muted);
+  font-size: 11px;
+}
+
+.uggov-step-progress__label--on .uggov-step-progress__num {
+  background: var(--uggov-black);
+  color: var(--uggov-flag-yellow);
+}
+
+.uggov-step-progress__title {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+@media (max-width: 640px) {
+  .uggov-step-progress__title {
+    display: none;
+  }
+}
+
+/* ======================================================
+   PAYMENT STEP
+   ====================================================== */
+.uggov-payment__summary {
+  background: var(--uggov-bg-muted);
+  border: 1px solid var(--uggov-border);
+  border-radius: var(--uggov-radius-md);
+  padding: var(--uggov-space-5) var(--uggov-space-6);
+  margin-bottom: var(--uggov-space-6);
+}
+
+.uggov-payment__summary-head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: var(--uggov-space-4);
+  margin-bottom: var(--uggov-space-4);
+  padding-bottom: var(--uggov-space-3);
+  border-bottom: 1px solid var(--uggov-border);
+}
+
+.uggov-payment__summary-label {
+  font-size: var(--uggov-text-xs);
+  color: var(--uggov-text-muted);
+  text-transform: uppercase;
+  letter-spacing: var(--uggov-tracking-wider);
+  font-weight: var(--uggov-weight-semibold);
+}
+
+.uggov-payment__summary-amount {
+  font-size: var(--uggov-text-2xl);
+  font-weight: var(--uggov-weight-bold);
+  letter-spacing: var(--uggov-tracking-tight);
+  color: var(--uggov-text);
+}
+
+.uggov-payment__breakdown {
+  display: flex;
+  flex-direction: column;
+  gap: var(--uggov-space-2);
+  font-size: var(--uggov-text-sm);
+}
+
+.uggov-payment__breakdown-row {
+  display: flex;
+  justify-content: space-between;
+  gap: var(--uggov-space-4);
+  color: var(--uggov-text-subtle);
+}
+
+.uggov-payment__breakdown-row dt {
+  font-weight: var(--uggov-weight-regular);
+}
+
+.uggov-payment__breakdown-row dd {
+  font-weight: var(--uggov-weight-semibold);
+  color: var(--uggov-text);
+}
+
+.uggov-payment__section-label {
+  display: block;
+  font-size: var(--uggov-text-sm);
+  font-weight: var(--uggov-weight-semibold);
+  color: var(--uggov-text);
+  margin-bottom: var(--uggov-space-3);
+}
+
+.uggov-payment__methods {
+  display: flex;
+  flex-direction: column;
+  gap: var(--uggov-space-3);
+  margin-bottom: var(--uggov-space-6);
+}
+
+.uggov-payment__method {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--uggov-space-4);
+  padding: var(--uggov-space-4) var(--uggov-space-5);
+  border: 1px solid var(--uggov-border-strong);
+  border-radius: var(--uggov-radius-md);
+  cursor: pointer;
+  transition:
+    background-color var(--uggov-dur-fast) var(--uggov-ease-in-out),
+    color var(--uggov-dur-fast) var(--uggov-ease-in-out),
+    border-color var(--uggov-dur-fast) var(--uggov-ease-in-out);
+}
+
+.uggov-payment__method:hover {
+  background: var(--uggov-black);
+  color: var(--uggov-flag-yellow);
+  border-color: var(--uggov-black);
+}
+
+.uggov-payment__method:hover .uggov-payment__method-blurb {
+  color: rgba(252, 220, 4, 0.85);
+}
+
+.uggov-payment__method.is-selected {
+  border-color: var(--uggov-black);
+  background: var(--uggov-bg-elevated);
+  box-shadow: inset 4px 0 0 var(--uggov-flag-yellow);
+}
+
+.uggov-payment__method input[type='radio'] {
+  margin-top: 3px;
+  accent-color: var(--uggov-black);
+  width: 18px;
+  height: 18px;
+  flex: 0 0 auto;
+}
+
+.uggov-payment__method-body {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.uggov-payment__method-title {
+  font-weight: var(--uggov-weight-semibold);
+  font-size: var(--uggov-text-base);
+}
+
+.uggov-payment__method-blurb {
+  font-size: var(--uggov-text-sm);
+  color: var(--uggov-text-muted);
+  line-height: var(--uggov-leading-normal);
+}
+
+.uggov-payment__detail {
+  padding-top: var(--uggov-space-4);
+  border-top: 1px dashed var(--uggov-border);
+}
+
+.uggov-payment__note {
+  padding: var(--uggov-space-4) var(--uggov-space-5);
+  background: var(--uggov-bg-muted);
+  border-left: 3px solid var(--uggov-flag-yellow);
+  border-radius: var(--uggov-radius-sm);
+  color: var(--uggov-text);
+  line-height: var(--uggov-leading-normal);
+  font-size: var(--uggov-text-sm);
+}
+
+.uggov-payment__note strong {
+  display: block;
+  margin-bottom: var(--uggov-space-1);
+  font-size: var(--uggov-text-base);
+}
+
+.uggov-payment__note p {
+  margin: 0;
+}
+
+/* ======================================================
+   PROCESSING SPINNER
+   ====================================================== */
+.uggov-processing {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: var(--uggov-space-8) var(--uggov-space-4);
+  text-align: center;
+}
+
+.uggov-processing__spinner {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  border: 5px solid var(--uggov-bg-muted);
+  border-top-color: var(--uggov-black);
+  animation: uggov-spin 900ms linear infinite;
+  margin-bottom: var(--uggov-space-5);
+}
+
+@keyframes uggov-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* ======================================================
+   FIND-A-PARISH — map + search
+   ====================================================== */
+.uggov-parish-layout {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--uggov-space-6);
+  max-width: var(--uggov-max);
+  margin-inline: auto;
+}
+
+@media (min-width: 900px) {
+  .uggov-parish-layout {
+    grid-template-columns: 360px 1fr;
+    align-items: start;
+  }
+}
+
+.uggov-parish-aside {
+  display: flex;
+  flex-direction: column;
+  gap: var(--uggov-space-4);
+  position: sticky;
+  top: 96px;
+  max-height: calc(100vh - 140px);
+}
+
+@media (max-width: 899px) {
+  .uggov-parish-aside {
+    position: static;
+    max-height: none;
+  }
+}
+
+.uggov-parish-search {
+  position: relative;
+  display: flex;
+  align-items: center;
+  background: var(--uggov-bg-elevated);
+  border: 1px solid var(--uggov-border-strong);
+  border-radius: var(--uggov-radius-full);
+  transition:
+    border-color var(--uggov-dur-fast) var(--uggov-ease-in-out),
+    box-shadow var(--uggov-dur-fast) var(--uggov-ease-in-out);
+}
+
+.uggov-parish-search:focus-within {
+  border-color: var(--uggov-black);
+  box-shadow: 0 0 0 3px var(--uggov-flag-yellow);
+}
+
+.uggov-parish-search__icon {
+  display: inline-flex;
+  padding-left: var(--uggov-space-4);
+  color: var(--uggov-text-muted);
+}
+
+.uggov-parish-search__input {
+  flex: 1;
+  min-width: 0;
+  padding: var(--uggov-space-3) var(--uggov-space-4);
+  font: inherit;
+  font-size: var(--uggov-text-base);
+  background: transparent;
+  border: none;
+  outline: none;
+  color: var(--uggov-text);
+}
+
+.uggov-parish-search__input::placeholder {
+  color: var(--uggov-text-muted);
+}
+
+.uggov-parish-count {
+  font-size: var(--uggov-text-sm);
+  color: var(--uggov-text-muted);
+  padding-inline: var(--uggov-space-2);
+}
+
+.uggov-parish-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--uggov-space-2);
+  overflow-y: auto;
+  padding-right: var(--uggov-space-1);
+}
+
+.uggov-parish-list__item {
+  width: 100%;
+  text-align: left;
+  background: var(--uggov-bg-elevated);
+  border: 1px solid var(--uggov-border);
+  border-radius: var(--uggov-radius-md);
+  padding: var(--uggov-space-4) var(--uggov-space-4);
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  transition:
+    background-color var(--uggov-dur-fast) var(--uggov-ease-in-out),
+    color var(--uggov-dur-fast) var(--uggov-ease-in-out),
+    border-color var(--uggov-dur-fast) var(--uggov-ease-in-out);
+}
+
+.uggov-parish-list__item:hover {
+  background: var(--uggov-black);
+  color: var(--uggov-flag-yellow);
+  border-color: var(--uggov-black);
+}
+
+.uggov-parish-list__item:hover .uggov-parish-list__meta {
+  color: rgba(252, 220, 4, 0.8);
+}
+
+.uggov-parish-list__item.is-selected {
+  background: var(--uggov-black);
+  color: var(--uggov-flag-yellow);
+  border-color: var(--uggov-black);
+  box-shadow: inset 4px 0 0 var(--uggov-flag-yellow);
+}
+
+.uggov-parish-list__item.is-selected .uggov-parish-list__meta {
+  color: rgba(252, 220, 4, 0.85);
+}
+
+.uggov-parish-list__title {
+  font-weight: var(--uggov-weight-semibold);
+  font-size: var(--uggov-text-base);
+}
+
+.uggov-parish-list__meta {
+  font-size: var(--uggov-text-sm);
+  color: var(--uggov-text-muted);
+}
+
+.uggov-parish-list__status {
+  align-self: flex-start;
+  font-size: var(--uggov-text-xs);
+  font-weight: var(--uggov-weight-semibold);
+  text-transform: uppercase;
+  letter-spacing: var(--uggov-tracking-wider);
+  padding: 3px 10px;
+  border-radius: var(--uggov-radius-full);
+  margin-top: 4px;
+  background: var(--uggov-bg-muted);
+  color: var(--uggov-text-subtle);
+}
+
+.uggov-parish-list__status.is-active {
+  background: var(--uggov-gold-soft, rgba(161, 98, 7, 0.12));
+  color: var(--uggov-gold);
+}
+
+.uggov-parish-list__status.is-enrolling {
+  background: rgba(252, 220, 4, 0.22);
+  color: #5c4a00;
+}
+
+.uggov-parish-list__status.is-pending {
+  background: var(--uggov-bg-muted);
+  color: var(--uggov-text-muted);
+}
+
+.uggov-parish-list__item:hover .uggov-parish-list__status,
+.uggov-parish-list__item.is-selected .uggov-parish-list__status {
+  background: rgba(252, 220, 4, 0.18);
+  color: var(--uggov-flag-yellow);
+}
+
+.uggov-parish-list__empty {
+  padding: var(--uggov-space-4);
+  color: var(--uggov-text-muted);
+  font-size: var(--uggov-text-sm);
+  text-align: center;
+  border: 1px dashed var(--uggov-border);
+  border-radius: var(--uggov-radius-md);
+}
+
+.uggov-parish-mapwrap {
+  display: flex;
+  flex-direction: column;
+  gap: var(--uggov-space-5);
+}
+
+.uggov-parish-map {
+  height: clamp(420px, 65vh, 680px);
+  border: 1px solid var(--uggov-border-strong);
+  border-radius: var(--uggov-radius-md);
+  overflow: hidden;
+  background: var(--uggov-bg-muted);
+}
+
+.uggov-parish-map--loading {
+  display: grid;
+  place-items: center;
+  color: var(--uggov-text-muted);
+  font-size: var(--uggov-text-sm);
+}
+
+.uggov-parish-map--loading::before {
+  content: 'Loading map…';
+}
+
+.uggov-parish-marker {
+  background: transparent;
+  border: none;
+}
+
+.uggov-parish-marker > span {
+  display: block;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: var(--uggov-flag-red);
+  border: 3px solid var(--uggov-flag-yellow);
+  box-shadow: 0 0 0 1px var(--uggov-black), 0 1px 3px rgba(0, 0, 0, 0.3);
+  transition: transform var(--uggov-dur-base) var(--uggov-ease-spring);
+}
+
+.uggov-parish-marker:hover > span,
+.uggov-parish-marker.is-selected > span {
+  transform: scale(1.35);
+  background: var(--uggov-black);
+  border-color: var(--uggov-flag-yellow);
+}
+
+.leaflet-container {
+  font-family: var(--uggov-font-base);
+}
+
+.leaflet-tooltip {
+  background: var(--uggov-black);
+  color: var(--uggov-flag-yellow);
+  border: none;
+  border-radius: var(--uggov-radius-sm);
+  font-size: var(--uggov-text-xs);
+  font-weight: var(--uggov-weight-semibold);
+  padding: 4px 10px;
+  box-shadow: var(--uggov-shadow-sm);
+}
+
+.leaflet-tooltip-top::before {
+  border-top-color: var(--uggov-black);
+}
+
+.leaflet-control-attribution {
+  background: rgba(255, 255, 255, 0.75) !important;
+  font-size: 11px !important;
+}
+
+.leaflet-control-zoom a {
+  background: var(--uggov-bg-elevated) !important;
+  color: var(--uggov-text) !important;
+  border-color: var(--uggov-border) !important;
+}
+
+.leaflet-control-zoom a:hover {
+  background: var(--uggov-black) !important;
+  color: var(--uggov-flag-yellow) !important;
+}
+
+.uggov-parish-selected {
+  border: 1px solid var(--uggov-border);
+  border-top: 4px solid var(--uggov-flag-yellow);
+  border-radius: var(--uggov-radius-md);
+  padding: var(--uggov-space-5) var(--uggov-space-6);
+  background: var(--uggov-bg-elevated);
+}
+
+.uggov-parish-selected__head {
+  display: flex;
+  justify-content: space-between;
+  gap: var(--uggov-space-4);
+  align-items: flex-start;
+  flex-wrap: wrap;
+  margin-bottom: var(--uggov-space-5);
+}
+
+.uggov-parish-selected__eyebrow {
+  font-size: var(--uggov-text-xs);
+  color: var(--uggov-text-muted);
+  font-weight: var(--uggov-weight-semibold);
+  text-transform: uppercase;
+  letter-spacing: var(--uggov-tracking-wider);
+  margin-bottom: var(--uggov-space-1);
+}
+
+.uggov-parish-selected__name {
+  font-size: var(--uggov-text-2xl);
+  font-weight: var(--uggov-weight-bold);
+  letter-spacing: var(--uggov-tracking-tight);
+  margin-bottom: 2px;
+}
+
+.uggov-parish-selected__meta {
+  color: var(--uggov-text-muted);
+  font-size: var(--uggov-text-sm);
+}
+
+.uggov-parish-selected__status {
+  font-size: var(--uggov-text-xs);
+  font-weight: var(--uggov-weight-semibold);
+  text-transform: uppercase;
+  letter-spacing: var(--uggov-tracking-wider);
+  padding: 4px 10px;
+  border-radius: var(--uggov-radius-full);
+  white-space: nowrap;
+}
+
+.uggov-parish-selected__status.is-active {
+  background: var(--uggov-gold-soft, rgba(161, 98, 7, 0.12));
+  color: var(--uggov-gold);
+}
+
+.uggov-parish-selected__status.is-enrolling {
+  background: rgba(252, 220, 4, 0.22);
+  color: #5c4a00;
+}
+
+.uggov-parish-selected__status.is-pending {
+  background: var(--uggov-bg-muted);
+  color: var(--uggov-text-muted);
+}
+
+.uggov-parish-selected__stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: var(--uggov-space-5);
+}
+
+.uggov-parish-selected__stats > div {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.uggov-parish-selected__stats dt {
+  font-size: var(--uggov-text-xs);
+  text-transform: uppercase;
+  letter-spacing: var(--uggov-tracking-wider);
+  color: var(--uggov-text-muted);
+  font-weight: var(--uggov-weight-semibold);
+}
+
+.uggov-parish-selected__stats dd {
+  font-size: var(--uggov-text-lg);
+  font-weight: var(--uggov-weight-semibold);
+  color: var(--uggov-text);
+}

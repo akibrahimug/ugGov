@@ -1,0 +1,156 @@
+/* ========================================================================
+   BUTTONS
+   ONE hover state applies to every variant, everywhere:
+     background: black
+     color: flag yellow
+   Default (rest) states differ only to create visual hierarchy; once the
+   user engages the button, the feedback is identical across the app.
+   ======================================================================== */
+
+/* Rest-state tokens for the five variants */
+:root {
+  --uggov-btn-primary-bg: var(--uggov-black);
+  --uggov-btn-primary-fg: var(--uggov-white);
+
+  --uggov-btn-secondary-bg: var(--uggov-bg-elevated);
+  --uggov-btn-secondary-fg: var(--uggov-text);
+  --uggov-btn-secondary-border: var(--uggov-border-strong);
+
+  --uggov-btn-danger-bg: var(--uggov-flag-red);
+  --uggov-btn-danger-fg: var(--uggov-white);
+
+  --uggov-btn-inverse-bg: var(--uggov-white);
+  --uggov-btn-inverse-fg: var(--uggov-black);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme='light']) {
+    --uggov-btn-primary-bg: var(--uggov-flag-yellow);
+    --uggov-btn-primary-fg: var(--uggov-black);
+
+    --uggov-btn-secondary-bg: rgba(255, 255, 255, 0.06);
+    --uggov-btn-secondary-fg: var(--uggov-text);
+    --uggov-btn-secondary-border: rgba(255, 255, 255, 0.14);
+
+    --uggov-btn-inverse-bg: var(--uggov-white);
+    --uggov-btn-inverse-fg: var(--uggov-black);
+  }
+}
+
+:root[data-theme='dark'] {
+  --uggov-btn-primary-bg: var(--uggov-flag-yellow);
+  --uggov-btn-primary-fg: var(--uggov-black);
+
+  --uggov-btn-secondary-bg: rgba(255, 255, 255, 0.06);
+  --uggov-btn-secondary-fg: var(--uggov-text);
+  --uggov-btn-secondary-border: rgba(255, 255, 255, 0.14);
+
+  --uggov-btn-inverse-bg: var(--uggov-white);
+  --uggov-btn-inverse-fg: var(--uggov-black);
+}
+
+/* ---------- base ---------- */
+.uggov-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--uggov-space-2);
+  font-family: inherit;
+  font-weight: var(--uggov-weight-semibold);
+  letter-spacing: var(--uggov-tracking-snug);
+  line-height: 1.2;
+  border-radius: var(--uggov-radius-full);
+  border: 1px solid transparent;
+  cursor: pointer;
+  text-decoration: none;
+  white-space: nowrap;
+  user-select: none;
+  transition:
+    background-color var(--uggov-dur-fast) var(--uggov-ease-in-out),
+    color var(--uggov-dur-fast) var(--uggov-ease-in-out),
+    border-color var(--uggov-dur-fast) var(--uggov-ease-in-out),
+    transform var(--uggov-dur-base) var(--uggov-ease-spring),
+    box-shadow var(--uggov-dur-base) var(--uggov-ease-in-out);
+}
+
+/* UNIVERSAL HOVER — every button goes black + flag-yellow on hover. */
+.uggov-button:hover {
+  background: var(--uggov-black);
+  color: var(--uggov-flag-yellow);
+  border-color: var(--uggov-black);
+  box-shadow: var(--uggov-shadow-md);
+  transform: translateY(-1px);
+}
+
+.uggov-button:active {
+  transform: translateY(0) scale(0.97);
+  transition-duration: var(--uggov-dur-fast);
+}
+
+.uggov-button:disabled,
+.uggov-button[aria-disabled='true'] {
+  opacity: 0.5;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+/* ---------- sizes ---------- */
+.uggov-button--sm {
+  font-size: var(--uggov-text-sm);
+  padding: 0.5rem 1rem;
+  min-height: 36px;
+}
+.uggov-button--base {
+  font-size: var(--uggov-text-base);
+  padding: 0.75rem 1.375rem;
+  min-height: 44px;
+}
+.uggov-button--lg {
+  font-size: var(--uggov-text-lg);
+  padding: 1rem 1.75rem;
+  min-height: 52px;
+}
+
+.uggov-button--full {
+  width: 100%;
+}
+
+/* ---------- variants (REST states only) ---------- */
+.uggov-button--primary {
+  background: var(--uggov-btn-primary-bg);
+  color: var(--uggov-btn-primary-fg);
+  box-shadow: var(--uggov-shadow-sm);
+}
+
+.uggov-button--secondary {
+  background: var(--uggov-btn-secondary-bg);
+  color: var(--uggov-btn-secondary-fg);
+  border-color: var(--uggov-btn-secondary-border);
+}
+
+.uggov-button--ghost {
+  background: transparent;
+  color: inherit;
+}
+
+.uggov-button--warning {
+  background: var(--uggov-btn-danger-bg);
+  color: var(--uggov-btn-danger-fg);
+}
+
+.uggov-button--inverse {
+  background: var(--uggov-btn-inverse-bg);
+  color: var(--uggov-btn-inverse-fg);
+  box-shadow: var(--uggov-shadow-sm);
+}
+
+/* Icon slot — trailing arrow nudges forward on hover */
+.uggov-button__icon {
+  display: inline-flex;
+  line-height: 0;
+  transition: transform var(--uggov-dur-base) var(--uggov-ease-spring);
+}
+.uggov-button:hover .uggov-button__icon:last-child {
+  transform: translateX(3px);
+}

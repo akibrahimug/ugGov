@@ -1,0 +1,238 @@
+/**
+ * UG.GOV design tokens — black / yellow / red flag palette.
+ * Light + dark themes via prefers-color-scheme and optional [data-theme="dark"] override.
+ */
+
+:root {
+  /* ===== Flag palette ===== */
+  --uggov-black: #0a0a0b;
+  --uggov-black-soft: #16161a;
+  --uggov-white: #ffffff;
+
+  --uggov-flag-yellow: #fcdc04;
+  --uggov-flag-yellow-deep: #c9a800;
+  --uggov-flag-yellow-soft: #fff5b5;
+
+  --uggov-flag-red: #d90000;
+  --uggov-flag-red-deep: #8b0000;
+  --uggov-flag-red-soft: #ffe5e5;
+
+  /* ===== Supporting derived (still in-palette) ===== */
+  --uggov-gold: #a16207;             /* darker warm ochre — reads as "positive" without leaving flag space */
+  --uggov-gold-soft: rgba(161, 98, 7, 0.12);
+  --uggov-crimson: #b91c1c;           /* AA-readable red for body links */
+
+  /* ===== Links ===== */
+  --uggov-link: #b91c1c;
+  --uggov-link-hover: #8b0000;
+
+  /* ===== Ink scale (neutrals) ===== */
+  --uggov-ink-900: #0a0a0b;
+  --uggov-ink-800: #18181b;
+  --uggov-ink-700: #27272a;
+  --uggov-ink-600: #3f3f46;
+  --uggov-ink-500: #52525b;
+  --uggov-ink-400: #71717a;
+  --uggov-ink-300: #a1a1aa;
+  --uggov-ink-200: #d4d4d8;
+  --uggov-ink-100: #e4e4e7;
+  --uggov-ink-50: #f4f4f5;
+  --uggov-ink-25: #fafafa;
+
+  /* ===== Semantic surfaces (light) =====
+     Four flat shades — visual rhythm comes from alternating these, not gradients. */
+  --uggov-bg: #ffffff;
+  --uggov-bg-elevated: #ffffff;
+  --uggov-bg-subtle: #f8f8f9;         /* quiet hero / CTA back */
+  --uggov-bg-muted: #f1f1f2;          /* section alternation */
+  --uggov-bg-inverse: #0a0a0b;
+
+  --uggov-text: #0a0a0b;
+  --uggov-text-subtle: #3f3f46;
+  --uggov-text-muted: #71717a;
+  --uggov-text-inverse: #ffffff;
+
+  --uggov-border: rgba(9, 9, 11, 0.08);
+  --uggov-border-strong: rgba(9, 9, 11, 0.14);
+
+  /* ===== Semantic states ===== */
+  --uggov-success: #a16207;     /* gold/ochre — in-palette positive */
+  --uggov-warning: #c9a800;     /* flag yellow deep */
+  --uggov-error: #d90000;       /* flag red */
+  --uggov-info: #27272a;        /* neutral dark — no blue */
+
+  /* ===== Typography ===== */
+  --uggov-font-base:
+    'Inter', 'SF Pro Display', 'Helvetica Neue', Helvetica, Arial, system-ui, -apple-system,
+    sans-serif;
+  --uggov-font-display: var(--uggov-font-base);
+  --uggov-font-mono: 'JetBrains Mono', 'SFMono-Regular', Menlo, Consolas, monospace;
+
+  --uggov-text-xs: 0.75rem;
+  --uggov-text-sm: 0.875rem;
+  --uggov-text-base: 1rem;
+  --uggov-text-lg: 1.125rem;
+  --uggov-text-xl: 1.375rem;
+  --uggov-text-2xl: 1.75rem;
+  --uggov-text-3xl: 2.25rem;
+  --uggov-text-4xl: 3rem;
+  --uggov-text-5xl: 4rem;
+  --uggov-text-6xl: 5.5rem;
+  --uggov-text-7xl: 7rem;
+
+  --uggov-leading-tight: 1.05;
+  --uggov-leading-snug: 1.15;
+  --uggov-leading-normal: 1.5;
+  --uggov-leading-relaxed: 1.65;
+
+  --uggov-tracking-tight: -0.03em;
+  --uggov-tracking-snug: -0.02em;
+  --uggov-tracking-normal: 0;
+  --uggov-tracking-wide: 0.02em;
+  --uggov-tracking-wider: 0.08em;
+
+  --uggov-weight-regular: 400;
+  --uggov-weight-medium: 500;
+  --uggov-weight-semibold: 600;
+  --uggov-weight-bold: 700;
+  --uggov-weight-black: 800;
+
+  /* ===== Spacing ===== */
+  --uggov-space-0: 0;
+  --uggov-space-1: 0.25rem;
+  --uggov-space-2: 0.5rem;
+  --uggov-space-3: 0.75rem;
+  --uggov-space-4: 1rem;
+  --uggov-space-5: 1.25rem;
+  --uggov-space-6: 1.5rem;
+  --uggov-space-8: 2rem;
+  --uggov-space-10: 2.5rem;
+  --uggov-space-12: 3rem;
+  --uggov-space-16: 4rem;
+  --uggov-space-20: 5rem;
+  --uggov-space-24: 6rem;
+  --uggov-space-32: 8rem;
+  --uggov-space-40: 10rem;
+  --uggov-space-48: 12rem;
+
+  /* ===== Radii ===== */
+  --uggov-radius-none: 0;
+  --uggov-radius-sm: 6px;
+  --uggov-radius-base: 10px;
+  --uggov-radius-md: 14px;
+  --uggov-radius-lg: 20px;
+  --uggov-radius-xl: 28px;
+  --uggov-radius-2xl: 36px;
+  --uggov-radius-3xl: 48px;
+  --uggov-radius-full: 9999px;
+
+  /* ===== Shadows ===== */
+  --uggov-shadow-xs: 0 1px 2px rgba(9, 9, 11, 0.04);
+  --uggov-shadow-sm: 0 2px 6px rgba(9, 9, 11, 0.05), 0 1px 2px rgba(9, 9, 11, 0.04);
+  --uggov-shadow-base: 0 6px 16px rgba(9, 9, 11, 0.06), 0 2px 4px rgba(9, 9, 11, 0.04);
+  --uggov-shadow-md: 0 14px 28px rgba(9, 9, 11, 0.08), 0 4px 8px rgba(9, 9, 11, 0.05);
+  --uggov-shadow-lg: 0 24px 48px rgba(9, 9, 11, 0.10), 0 8px 16px rgba(9, 9, 11, 0.06);
+  --uggov-shadow-xl: 0 40px 80px rgba(9, 9, 11, 0.14), 0 14px 28px rgba(9, 9, 11, 0.08);
+  /* Focus ring: flag yellow inner, black outer — readable on any surface */
+  --uggov-shadow-focus: 0 0 0 3px var(--uggov-flag-yellow), 0 0 0 5px var(--uggov-black);
+
+  /* ===== Motion ===== */
+  --uggov-dur-fast: 160ms;
+  --uggov-dur-base: 240ms;
+  --uggov-dur-slow: 400ms;
+  --uggov-dur-slower: 640ms;
+  --uggov-ease-spring: cubic-bezier(0.22, 1, 0.36, 1);
+  --uggov-ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+  --uggov-ease-in-out: cubic-bezier(0.4, 0, 0.2, 1);
+  --uggov-ease-back: cubic-bezier(0.34, 1.56, 0.64, 1);
+
+  /* ===== Hero accent (solid colour for emphasised display text) ===== */
+  --uggov-accent-strong: var(--uggov-flag-red);
+
+  /* ===== Layout ===== */
+  --uggov-content-max: 1040px;
+  --uggov-wide-max: 1280px;
+  --uggov-max: 1440px;
+  --uggov-prose-max: 42rem;
+}
+
+/* Automatic dark via OS, override via [data-theme="dark"] on <html> */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme='light']) {
+    --uggov-bg: #0a0a0b;
+    --uggov-bg-elevated: #16161a;
+    --uggov-bg-subtle: #111114;
+    --uggov-bg-muted: #18181b;
+    --uggov-bg-inverse: #ffffff;
+
+    --uggov-text: #fafafa;
+    --uggov-text-subtle: #d4d4d8;
+    --uggov-text-muted: #a1a1aa;
+    --uggov-text-inverse: #0a0a0b;
+
+    --uggov-border: rgba(255, 255, 255, 0.08);
+    --uggov-border-strong: rgba(255, 255, 255, 0.14);
+
+    --uggov-gold-soft: rgba(252, 220, 4, 0.12);
+    --uggov-link: #ffa0a0;           /* light salmon red */
+    --uggov-link-hover: #fcdc04;     /* flag yellow — reads as "activated" */
+
+    --uggov-success: #e8d87a;        /* soft gold reads positive on dark */
+    --uggov-warning: #fcdc04;
+    --uggov-error: #ff6b6b;
+    --uggov-info: #e4e4e7;
+
+    --uggov-accent-strong: #ff6b6b;
+
+    /* Shadows stay neutral-black to avoid any brown cast */
+    --uggov-shadow-xs: 0 1px 2px rgba(0, 0, 0, 0.35);
+    --uggov-shadow-sm: 0 2px 6px rgba(0, 0, 0, 0.4), 0 1px 2px rgba(0, 0, 0, 0.3);
+    --uggov-shadow-base: 0 6px 16px rgba(0, 0, 0, 0.45), 0 2px 4px rgba(0, 0, 0, 0.3);
+    --uggov-shadow-md: 0 14px 28px rgba(0, 0, 0, 0.5), 0 4px 8px rgba(0, 0, 0, 0.35);
+    --uggov-shadow-lg: 0 24px 48px rgba(0, 0, 0, 0.55), 0 8px 16px rgba(0, 0, 0, 0.4);
+    --uggov-shadow-xl: 0 40px 80px rgba(0, 0, 0, 0.6), 0 14px 28px rgba(0, 0, 0, 0.4);
+  }
+}
+
+:root[data-theme='dark'] {
+  --uggov-bg: #0a0a0b;
+  --uggov-bg-elevated: #16161a;
+  --uggov-bg-subtle: #111114;
+  --uggov-bg-muted: #18181b;
+  --uggov-bg-inverse: #ffffff;
+
+  --uggov-text: #fafafa;
+  --uggov-text-subtle: #d4d4d8;
+  --uggov-text-muted: #a1a1aa;
+  --uggov-text-inverse: #0a0a0b;
+
+  --uggov-border: rgba(255, 255, 255, 0.08);
+  --uggov-border-strong: rgba(255, 255, 255, 0.14);
+
+  --uggov-gold-soft: rgba(252, 220, 4, 0.12);
+  --uggov-link: #ffa0a0;
+  --uggov-link-hover: #fcdc04;
+
+  --uggov-success: #e8d87a;
+  --uggov-warning: #fcdc04;
+  --uggov-error: #ff6b6b;
+  --uggov-info: #e4e4e7;
+
+  --uggov-accent-strong: #ff6b6b;
+
+  --uggov-shadow-xs: 0 1px 2px rgba(0, 0, 0, 0.35);
+  --uggov-shadow-sm: 0 2px 6px rgba(0, 0, 0, 0.4), 0 1px 2px rgba(0, 0, 0, 0.3);
+  --uggov-shadow-base: 0 6px 16px rgba(0, 0, 0, 0.45), 0 2px 4px rgba(0, 0, 0, 0.3);
+  --uggov-shadow-md: 0 14px 28px rgba(0, 0, 0, 0.5), 0 4px 8px rgba(0, 0, 0, 0.35);
+  --uggov-shadow-lg: 0 24px 48px rgba(0, 0, 0, 0.55), 0 8px 16px rgba(0, 0, 0, 0.4);
+  --uggov-shadow-xl: 0 40px 80px rgba(0, 0, 0, 0.6), 0 14px 28px rgba(0, 0, 0, 0.4);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --uggov-dur-fast: 0ms;
+    --uggov-dur-base: 0ms;
+    --uggov-dur-slow: 0ms;
+    --uggov-dur-slower: 0ms;
+  }
+}

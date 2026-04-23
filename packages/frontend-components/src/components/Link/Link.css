@@ -1,0 +1,35 @@
+.uggov-link {
+  color: var(--uggov-link);
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition:
+    color var(--uggov-dur-fast) var(--uggov-ease-in-out),
+    border-color var(--uggov-dur-fast) var(--uggov-ease-in-out);
+}
+
+.uggov-link:hover {
+  color: var(--uggov-link-hover);
+  border-bottom-color: currentColor;
+}
+
+.uggov-link--inverse,
+.uggov-link--inverse:visited {
+  color: var(--uggov-white);
+}
+
+.uggov-link--inverse:hover {
+  color: var(--uggov-flag-yellow);
+}
+
+.uggov-link--muted,
+.uggov-link--muted:visited {
+  color: var(--uggov-text-muted);
+}
+
+.uggov-link--no-underline {
+  border-bottom: none;
+}
+
+.uggov-link--no-underline:hover {
+  border-bottom: 1px solid currentColor;
+}

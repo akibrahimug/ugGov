@@ -1,0 +1,516 @@
+.uggov-header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: transparent;
+  transition:
+    background-color var(--uggov-dur-base) var(--uggov-ease-in-out),
+    backdrop-filter var(--uggov-dur-base) var(--uggov-ease-in-out),
+    border-color var(--uggov-dur-base) var(--uggov-ease-in-out),
+    box-shadow var(--uggov-dur-base) var(--uggov-ease-in-out);
+  border-bottom: 1px solid transparent;
+}
+
+.uggov-header--scrolled {
+  background: var(--uggov-bg-elevated);
+  border-bottom-color: var(--uggov-border);
+  box-shadow: var(--uggov-shadow-xs);
+}
+
+.uggov-header__inner {
+  max-width: var(--uggov-max);
+  margin-inline: auto;
+  padding: var(--uggov-space-4) var(--uggov-space-5);
+  display: flex;
+  align-items: center;
+  gap: var(--uggov-space-4);
+}
+
+@media (min-width: 900px) {
+  .uggov-header__inner {
+    padding: var(--uggov-space-5) var(--uggov-space-8);
+  }
+}
+
+.uggov-header__brand {
+  display: flex;
+  align-items: center;
+  gap: var(--uggov-space-3);
+  color: var(--uggov-text);
+  text-decoration: none;
+  flex: 0 0 auto;
+  transition: opacity var(--uggov-dur-fast) var(--uggov-ease-in-out);
+}
+
+.uggov-header__brand:hover {
+  opacity: 0.85;
+}
+
+.uggov-header__crest {
+  display: block;
+  line-height: 0;
+  filter: drop-shadow(0 2px 6px rgba(10, 10, 11, 0.15));
+}
+
+.uggov-header__brand-text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.1;
+}
+
+.uggov-header__brand-title {
+  font-size: var(--uggov-text-lg);
+  font-weight: var(--uggov-weight-bold);
+  letter-spacing: var(--uggov-tracking-tight);
+}
+
+.uggov-header__brand-sub {
+  font-size: var(--uggov-text-xs);
+  color: var(--uggov-text-muted);
+  letter-spacing: var(--uggov-tracking-wide);
+}
+
+/* Primary nav — hidden on mobile, visible from 900px */
+.uggov-header__nav {
+  display: none;
+  flex: 1;
+}
+
+@media (min-width: 900px) {
+  .uggov-header__nav {
+    display: block;
+  }
+}
+
+.uggov-header__nav-list {
+  display: flex;
+  align-items: center;
+  gap: var(--uggov-space-1);
+  justify-content: center;
+}
+
+.uggov-header__nav-link {
+  display: inline-flex;
+  align-items: center;
+  padding: var(--uggov-space-2) var(--uggov-space-4);
+  font-size: var(--uggov-text-sm);
+  font-weight: var(--uggov-weight-medium);
+  color: var(--uggov-text-subtle);
+  border-radius: var(--uggov-radius-full);
+  transition:
+    background-color var(--uggov-dur-fast) var(--uggov-ease-in-out),
+    color var(--uggov-dur-fast) var(--uggov-ease-in-out);
+}
+
+.uggov-header__nav-link:hover {
+  color: var(--uggov-flag-yellow);
+  background: var(--uggov-black);
+}
+
+.uggov-header__nav-link--active {
+  color: var(--uggov-flag-yellow);
+  background: var(--uggov-black);
+}
+
+.uggov-header__utility {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  gap: var(--uggov-space-1);
+}
+
+/* Icon buttons in the header share one motion language. */
+.uggov-header__search-link,
+.uggov-header__menu-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  color: var(--uggov-text-subtle);
+  border-radius: var(--uggov-radius-full);
+  border: 1px solid transparent;
+  transition:
+    background-color var(--uggov-dur-fast) var(--uggov-ease-in-out),
+    color var(--uggov-dur-fast) var(--uggov-ease-in-out),
+    border-color var(--uggov-dur-fast) var(--uggov-ease-in-out),
+    transform var(--uggov-dur-base) var(--uggov-ease-spring);
+}
+
+.uggov-header__search-link:hover,
+.uggov-header__menu-btn:hover {
+  background: var(--uggov-black);
+  color: var(--uggov-flag-yellow);
+  transform: translateY(-1px);
+}
+
+.uggov-header__search-link:active,
+.uggov-header__menu-btn:active {
+  transform: translateY(0) scale(0.94);
+}
+
+/* Mobile menu button — hidden on desktop */
+@media (min-width: 900px) {
+  .uggov-header__menu-btn {
+    display: none;
+  }
+}
+
+.uggov-header__menu-icon {
+  position: relative;
+  width: 22px;
+  height: 18px;
+  display: inline-block;
+}
+
+.uggov-header__menu-icon span {
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: currentColor;
+  border-radius: 2px;
+  transition: transform var(--uggov-dur-base) var(--uggov-ease-spring), opacity var(--uggov-dur-fast);
+}
+
+.uggov-header__menu-icon span:nth-child(1) {
+  top: 2px;
+}
+.uggov-header__menu-icon span:nth-child(2) {
+  top: 8px;
+}
+.uggov-header__menu-icon span:nth-child(3) {
+  top: 14px;
+}
+
+.uggov-header__menu-icon.is-open span:nth-child(1) {
+  transform: translateY(6px) rotate(45deg);
+}
+.uggov-header__menu-icon.is-open span:nth-child(2) {
+  opacity: 0;
+}
+.uggov-header__menu-icon.is-open span:nth-child(3) {
+  transform: translateY(-6px) rotate(-45deg);
+}
+
+/* Mobile drawer */
+.uggov-header__drawer {
+  position: fixed;
+  top: 73px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: var(--uggov-bg);
+  z-index: 99;
+  overflow-y: auto;
+}
+
+@media (min-width: 900px) {
+  .uggov-header__drawer {
+    display: none;
+  }
+}
+
+.uggov-header__drawer-inner {
+  padding: var(--uggov-space-4);
+  display: flex;
+  flex-direction: column;
+  gap: var(--uggov-space-2);
+}
+
+.uggov-header__drawer-link {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--uggov-space-5) var(--uggov-space-5);
+  font-size: var(--uggov-text-xl);
+  font-weight: var(--uggov-weight-semibold);
+  color: var(--uggov-text);
+  background: var(--uggov-bg-elevated);
+  border-radius: var(--uggov-radius-lg);
+  border: 1px solid var(--uggov-border);
+  letter-spacing: var(--uggov-tracking-snug);
+  transition:
+    background-color var(--uggov-dur-fast) var(--uggov-ease-in-out),
+    color var(--uggov-dur-fast) var(--uggov-ease-in-out),
+    border-color var(--uggov-dur-fast) var(--uggov-ease-in-out),
+    transform var(--uggov-dur-base) var(--uggov-ease-spring);
+}
+
+.uggov-header__drawer-link:hover {
+  background: var(--uggov-black);
+  color: var(--uggov-flag-yellow);
+  border-color: var(--uggov-black);
+  transform: translateY(-1px);
+}
+
+.uggov-header__drawer-link > span {
+  color: inherit;
+  opacity: 0.7;
+  font-size: var(--uggov-text-base);
+  transition: transform var(--uggov-dur-fast) var(--uggov-ease-spring);
+}
+
+.uggov-header__drawer-link:hover > span {
+  transform: translateX(4px);
+  opacity: 1;
+}
+
+/* Nav trigger button (has children) — shares nav-link style */
+.uggov-header__nav-trigger {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: transparent;
+  border: none;
+  font: inherit;
+  cursor: pointer;
+}
+
+.uggov-header__chevron {
+  transition: transform var(--uggov-dur-base) var(--uggov-ease-spring);
+}
+
+.uggov-header__nav-trigger[aria-expanded='true'] .uggov-header__chevron {
+  transform: rotate(180deg);
+}
+
+/* ========================================================================
+   MEGA MENU (desktop)
+   ======================================================================== */
+.uggov-mega {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 100%;
+  background: var(--uggov-bg-elevated);
+  border-bottom: 1px solid var(--uggov-border);
+  box-shadow: var(--uggov-shadow-sm);
+}
+
+@media (max-width: 899px) {
+  .uggov-mega {
+    display: none;
+  }
+}
+
+.uggov-mega__inner {
+  max-width: var(--uggov-max);
+  margin-inline: auto;
+  padding: var(--uggov-space-8) var(--uggov-space-8) var(--uggov-space-6);
+  display: flex;
+  flex-direction: column;
+  gap: var(--uggov-space-6);
+}
+
+.uggov-mega__intro {
+  color: var(--uggov-text-muted);
+  font-size: var(--uggov-text-sm);
+  text-transform: uppercase;
+  letter-spacing: var(--uggov-tracking-wider);
+  font-weight: var(--uggov-weight-semibold);
+}
+
+.uggov-mega__groups {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: var(--uggov-space-10);
+  align-items: start;
+}
+
+.uggov-mega__group-heading {
+  font-size: var(--uggov-text-xs);
+  font-weight: var(--uggov-weight-semibold);
+  letter-spacing: var(--uggov-tracking-wider);
+  text-transform: uppercase;
+  color: var(--uggov-text-muted);
+  margin-bottom: var(--uggov-space-3);
+}
+
+.uggov-mega__group-list {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.uggov-mega__link {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: baseline;
+  gap: var(--uggov-space-2) var(--uggov-space-3);
+  padding: var(--uggov-space-3) var(--uggov-space-4);
+  border-radius: var(--uggov-radius-md);
+  color: var(--uggov-text);
+  text-decoration: none;
+  transition:
+    background-color var(--uggov-dur-fast) var(--uggov-ease-in-out),
+    color var(--uggov-dur-fast) var(--uggov-ease-in-out),
+    transform var(--uggov-dur-base) var(--uggov-ease-spring);
+}
+
+.uggov-mega__link:hover {
+  background: var(--uggov-black);
+  color: var(--uggov-flag-yellow);
+  transform: translateX(2px);
+}
+
+.uggov-mega__link-label {
+  font-weight: var(--uggov-weight-semibold);
+  font-size: var(--uggov-text-base);
+}
+
+.uggov-mega__link-desc {
+  grid-column: 1 / -1;
+  font-size: var(--uggov-text-sm);
+  color: var(--uggov-text-muted);
+  line-height: var(--uggov-leading-snug);
+}
+
+.uggov-mega__link:hover .uggov-mega__link-desc {
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.uggov-mega__link-arrow {
+  color: var(--uggov-text-muted);
+  font-size: var(--uggov-text-base);
+  opacity: 0;
+  transition: opacity var(--uggov-dur-fast) var(--uggov-ease-in-out), transform var(--uggov-dur-base) var(--uggov-ease-spring);
+}
+
+.uggov-mega__link:hover .uggov-mega__link-arrow {
+  opacity: 1;
+  color: var(--uggov-flag-yellow);
+  transform: translateX(3px);
+}
+
+.uggov-mega__footer {
+  padding-top: var(--uggov-space-4);
+  border-top: 1px solid var(--uggov-border);
+}
+
+/* ========================================================================
+   MOBILE DRAWER ACCORDION
+   ======================================================================== */
+.uggov-header__drawer-section {
+  background: var(--uggov-bg-elevated);
+  border: 1px solid var(--uggov-border);
+  border-radius: var(--uggov-radius-lg);
+  overflow: hidden;
+}
+
+.uggov-header__drawer-trigger {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--uggov-space-5);
+  background: transparent;
+  border: none;
+  font: inherit;
+  font-size: var(--uggov-text-xl);
+  font-weight: var(--uggov-weight-semibold);
+  color: var(--uggov-text);
+  cursor: pointer;
+  text-align: left;
+  letter-spacing: var(--uggov-tracking-snug);
+}
+
+.uggov-header__drawer-chevron {
+  color: var(--uggov-text-muted);
+  transition: transform var(--uggov-dur-base) var(--uggov-ease-spring);
+  display: inline-flex;
+}
+
+.uggov-header__drawer-chevron.is-open {
+  transform: rotate(180deg);
+}
+
+.uggov-header__drawer-panel {
+  overflow: hidden;
+}
+
+.uggov-header__drawer-panel-inner {
+  padding: 0 var(--uggov-space-5) var(--uggov-space-5);
+  display: flex;
+  flex-direction: column;
+  gap: var(--uggov-space-8);
+  border-top: 1px solid var(--uggov-border);
+  padding-top: var(--uggov-space-6);
+}
+
+/* Each group is a visibly bounded block: top rule + heading + rows. */
+.uggov-header__drawer-group {
+  padding-top: var(--uggov-space-3);
+  border-top: 2px solid var(--uggov-ink-200);
+}
+
+.uggov-header__drawer-group-heading {
+  font-size: var(--uggov-text-sm);
+  font-weight: var(--uggov-weight-bold);
+  letter-spacing: var(--uggov-tracking-wider);
+  text-transform: uppercase;
+  color: var(--uggov-text-subtle);
+  margin-bottom: var(--uggov-space-3);
+}
+
+.uggov-header__drawer-group ul {
+  display: flex;
+  flex-direction: column;
+  background: var(--uggov-bg);
+  border: 1px solid var(--uggov-border);
+  border-radius: var(--uggov-radius-md);
+  overflow: hidden;
+}
+
+.uggov-header__drawer-leaf {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--uggov-space-4) var(--uggov-space-5);
+  font-size: var(--uggov-text-base);
+  font-weight: var(--uggov-weight-medium);
+  color: var(--uggov-text);
+  text-decoration: none;
+  border-bottom: 1px solid var(--uggov-border);
+  transition:
+    background-color var(--uggov-dur-fast) var(--uggov-ease-in-out),
+    color var(--uggov-dur-fast) var(--uggov-ease-in-out);
+}
+
+.uggov-header__drawer-leaf::after {
+  content: '›';
+  color: var(--uggov-text-muted);
+  font-size: var(--uggov-text-lg);
+  margin-left: var(--uggov-space-3);
+}
+
+.uggov-header__drawer-group li:last-child .uggov-header__drawer-leaf {
+  border-bottom: none;
+}
+
+.uggov-header__drawer-leaf:hover,
+.uggov-header__drawer-leaf:active {
+  background: var(--uggov-black);
+  color: var(--uggov-flag-yellow);
+}
+
+.uggov-header__drawer-leaf:hover::after,
+.uggov-header__drawer-leaf:active::after {
+  color: var(--uggov-flag-yellow);
+}
+
+/* Mobile drawer view-all button aligns left inside its panel. */
+.uggov-header__drawer-panel-inner .uggov-button {
+  align-self: flex-start;
+}
+
+:root[data-theme='dark'] .uggov-header__drawer-group {
+  border-top-color: rgba(255, 255, 255, 0.14);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme='light']) .uggov-header__drawer-group {
+    border-top-color: rgba(255, 255, 255, 0.14);
+  }
+}

@@ -1,0 +1,297 @@
+/* ========================================================================
+   FORMS — label-above-input, generous rhythm, clear error states
+   ======================================================================== */
+
+/* Per-field container. */
+.uggov-form-group {
+  display: flex;
+  flex-direction: column;
+  gap: var(--uggov-space-2);
+  margin-bottom: var(--uggov-space-5);
+  max-width: 46rem;
+}
+
+.uggov-form-group:last-child {
+  margin-bottom: 0;
+}
+
+.uggov-form-group__label {
+  font-weight: var(--uggov-weight-semibold);
+  color: var(--uggov-text);
+  font-size: var(--uggov-text-base);
+  line-height: var(--uggov-leading-snug);
+}
+
+.uggov-form-group__optional {
+  color: var(--uggov-text-muted);
+  font-weight: var(--uggov-weight-regular);
+  margin-left: 2px;
+}
+
+.uggov-form-group__hint {
+  color: var(--uggov-text-muted);
+  font-size: var(--uggov-text-sm);
+  line-height: var(--uggov-leading-normal);
+  max-width: 40rem;
+}
+
+.uggov-form-group__error {
+  color: var(--uggov-flag-red);
+  font-weight: var(--uggov-weight-semibold);
+  font-size: var(--uggov-text-sm);
+  padding-left: 10px;
+  border-left: 3px solid var(--uggov-flag-red);
+  line-height: var(--uggov-leading-snug);
+}
+
+.uggov-form-group--error .uggov-input {
+  border-color: var(--uggov-flag-red);
+  border-width: 2px;
+  padding-top: calc(0.75rem - 1px);
+  padding-bottom: calc(0.75rem - 1px);
+}
+
+/* Paired field row (e.g. first name / last name side-by-side on tablet+) */
+.uggov-form-row {
+  display: flex;
+  flex-direction: column;
+  gap: var(--uggov-space-5);
+  margin-bottom: var(--uggov-space-5);
+}
+
+@media (min-width: 640px) {
+  .uggov-form-row {
+    flex-direction: row;
+    gap: var(--uggov-space-5);
+  }
+
+  .uggov-form-row > .uggov-form-group {
+    flex: 1;
+    margin-bottom: 0;
+  }
+}
+
+/* Inputs */
+.uggov-input {
+  font: inherit;
+  font-size: var(--uggov-text-base);
+  padding: 0.75rem 0.9375rem;
+  min-height: 48px;
+  color: var(--uggov-text);
+  background: var(--uggov-bg-elevated);
+  border: 1px solid var(--uggov-border-strong);
+  border-radius: var(--uggov-radius-sm);
+  transition:
+    border-color var(--uggov-dur-fast) var(--uggov-ease-in-out),
+    box-shadow var(--uggov-dur-fast) var(--uggov-ease-in-out);
+}
+
+.uggov-input::placeholder {
+  color: var(--uggov-text-muted);
+}
+
+.uggov-input:hover:not(:focus) {
+  border-color: var(--uggov-text);
+}
+
+.uggov-input:focus {
+  outline: none;
+  border-color: var(--uggov-black);
+  box-shadow: 0 0 0 3px var(--uggov-flag-yellow);
+}
+
+.uggov-input--w-sm { max-width: 10rem; }
+.uggov-input--w-md { max-width: 20rem; }
+.uggov-input--w-lg { max-width: 30rem; }
+.uggov-input--w-full { width: 100%; }
+
+.uggov-textarea {
+  width: 100%;
+  min-height: 120px;
+  line-height: var(--uggov-leading-normal);
+  resize: vertical;
+  padding: 0.75rem 0.9375rem;
+}
+
+.uggov-select {
+  width: 100%;
+  max-width: 30rem;
+  appearance: none;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8' fill='none'><path d='M1 1L6 6L11 1' stroke='%230A0A0B' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'/></svg>");
+  background-repeat: no-repeat;
+  background-position: right 1rem center;
+  padding-right: 2.75rem;
+  cursor: pointer;
+}
+
+:root[data-theme='dark'] .uggov-select,
+:root:not([data-theme='light']) .uggov-select {
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8' fill='none'><path d='M1 1L6 6L11 1' stroke='%23FAFAFA' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'/></svg>");
+}
+
+/* Fieldset — a numbered section */
+.uggov-fieldset {
+  border: none;
+  padding: var(--uggov-space-6) 0 0 0;
+  margin: 0 0 var(--uggov-space-8) 0;
+  border-top: 1px solid var(--uggov-border);
+}
+
+.uggov-fieldset:first-of-type {
+  padding-top: 0;
+  border-top: none;
+}
+
+.uggov-fieldset__legend {
+  display: block;
+  font-size: var(--uggov-text-2xl);
+  font-weight: var(--uggov-weight-bold);
+  letter-spacing: var(--uggov-tracking-tight);
+  color: var(--uggov-text);
+  margin-bottom: var(--uggov-space-3);
+  padding: 0;
+  line-height: var(--uggov-leading-tight);
+}
+
+.uggov-fieldset__step {
+  display: inline-block;
+  font-size: var(--uggov-text-xs);
+  font-weight: var(--uggov-weight-semibold);
+  letter-spacing: var(--uggov-tracking-wider);
+  text-transform: uppercase;
+  color: var(--uggov-text-muted);
+  margin-bottom: var(--uggov-space-2);
+}
+
+.uggov-fieldset__hint {
+  color: var(--uggov-text-subtle);
+  margin-bottom: var(--uggov-space-6);
+  line-height: var(--uggov-leading-normal);
+  max-width: 56ch;
+  font-size: var(--uggov-text-base);
+}
+
+.uggov-fieldset__body {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Error summary shown at top after failed submit */
+.uggov-error-summary {
+  padding: var(--uggov-space-5) var(--uggov-space-6);
+  margin-bottom: var(--uggov-space-8);
+  background: rgba(217, 0, 0, 0.06);
+  border: 2px solid var(--uggov-flag-red);
+  border-radius: var(--uggov-radius-md);
+}
+
+.uggov-error-summary__title {
+  font-size: var(--uggov-text-lg);
+  font-weight: var(--uggov-weight-bold);
+  color: var(--uggov-flag-red);
+  margin-bottom: var(--uggov-space-3);
+  letter-spacing: var(--uggov-tracking-snug);
+}
+
+.uggov-error-summary__list {
+  list-style: disc;
+  padding-left: var(--uggov-space-5);
+  color: var(--uggov-text);
+  line-height: var(--uggov-leading-normal);
+}
+
+.uggov-error-summary__list > li + li {
+  margin-top: 6px;
+}
+
+.uggov-error-summary a {
+  color: var(--uggov-flag-red-deep);
+  text-decoration: underline;
+  font-weight: var(--uggov-weight-semibold);
+  text-underline-offset: 3px;
+}
+
+.uggov-error-summary a:hover {
+  color: var(--uggov-flag-red);
+}
+
+:root[data-theme='dark'] .uggov-error-summary a,
+:root:not([data-theme='light']) .uggov-error-summary a {
+  color: #ffb3b3;
+}
+
+/* Form actions */
+.uggov-form-actions {
+  display: flex;
+  gap: var(--uggov-space-3);
+  flex-wrap: wrap;
+  margin-top: var(--uggov-space-8);
+  padding-top: var(--uggov-space-6);
+  border-top: 1px solid var(--uggov-border);
+}
+
+/* Confirmation card */
+.uggov-form-success {
+  padding: var(--uggov-space-8);
+  background: var(--uggov-bg-elevated);
+  border: 1px solid var(--uggov-border);
+  border-top: 4px solid var(--uggov-flag-yellow);
+  border-radius: var(--uggov-radius-md);
+}
+
+.uggov-form-success__title {
+  font-size: var(--uggov-text-2xl);
+  font-weight: var(--uggov-weight-bold);
+  letter-spacing: var(--uggov-tracking-tight);
+  margin-bottom: var(--uggov-space-3);
+}
+
+.uggov-form-success__lede {
+  font-size: var(--uggov-text-lg);
+  color: var(--uggov-text-subtle);
+  line-height: var(--uggov-leading-normal);
+  max-width: 52ch;
+  margin-bottom: var(--uggov-space-6);
+}
+
+.uggov-form-success__reference {
+  padding: var(--uggov-space-5) var(--uggov-space-6);
+  background: var(--uggov-bg-muted);
+  border-radius: var(--uggov-radius-base);
+  margin-bottom: var(--uggov-space-6);
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.uggov-form-success__reference-label {
+  font-size: var(--uggov-text-xs);
+  color: var(--uggov-text-muted);
+  font-weight: var(--uggov-weight-semibold);
+  text-transform: uppercase;
+  letter-spacing: var(--uggov-tracking-wider);
+}
+
+.uggov-form-success__reference-value {
+  font-size: var(--uggov-text-2xl);
+  font-weight: var(--uggov-weight-bold);
+  font-family: var(--uggov-font-mono);
+  letter-spacing: var(--uggov-tracking-snug);
+}
+
+.uggov-form-success__next-heading {
+  font-size: var(--uggov-text-lg);
+  font-weight: var(--uggov-weight-bold);
+  margin-bottom: var(--uggov-space-3);
+}
+
+.uggov-form-success__next-list {
+  list-style: decimal;
+  padding-left: var(--uggov-space-5);
+  display: flex;
+  flex-direction: column;
+  gap: var(--uggov-space-2);
+  color: var(--uggov-text-subtle);
+  margin-bottom: var(--uggov-space-6);
+  line-height: var(--uggov-leading-normal);
+}

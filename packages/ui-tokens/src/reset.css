@@ -1,0 +1,118 @@
+/**
+ * Modern reset.
+ * Prioritises quiet defaults + great typography + accessibility.
+ */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-family: var(--uggov-font-base);
+  font-feature-settings: 'cv11', 'ss01', 'ss03';
+  font-variant-numeric: tabular-nums;
+  color: var(--uggov-text);
+  background: var(--uggov-bg);
+  scroll-behavior: smooth;
+  scroll-padding-top: 96px;
+  text-rendering: optimizeLegibility;
+}
+
+body {
+  font-size: var(--uggov-text-base);
+  line-height: var(--uggov-leading-normal);
+  min-height: 100vh;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: var(--uggov-weight-bold);
+  line-height: var(--uggov-leading-tight);
+  letter-spacing: var(--uggov-tracking-tight);
+  color: var(--uggov-text);
+  text-wrap: balance;
+}
+
+p {
+  text-wrap: pretty;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+a {
+  color: var(--uggov-link);
+  text-decoration: none;
+  transition: color var(--uggov-dur-fast) var(--uggov-ease-in-out);
+}
+
+a:hover {
+  color: var(--uggov-link-hover);
+}
+
+:focus-visible {
+  outline: none;
+  box-shadow: var(--uggov-shadow-focus);
+  border-radius: var(--uggov-radius-sm);
+}
+
+img,
+svg,
+picture,
+video {
+  max-width: 100%;
+  display: block;
+}
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
+  color: inherit;
+}
+
+button {
+  cursor: pointer;
+  background: none;
+  border: none;
+}
+
+.uggov-visually-hidden {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  overflow: hidden !important;
+  clip: rect(0 0 0 0) !important;
+  white-space: nowrap !important;
+  border: 0 !important;
+}
+
+::selection {
+  background: rgba(252, 220, 4, 0.45);
+  color: var(--uggov-black);
+}
+
+@media print {
+  body {
+    background: #fff;
+    color: #000;
+  }
+}

@@ -1,0 +1,90 @@
+.uggov-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: var(--uggov-space-2);
+  padding: var(--uggov-space-6);
+  background: var(--uggov-bg-elevated);
+  border: 1px solid var(--uggov-border);
+  border-radius: var(--uggov-radius-md);
+  color: var(--uggov-text);
+  text-decoration: none;
+  height: 100%;
+  transition:
+    transform var(--uggov-dur-base) var(--uggov-ease-spring),
+    box-shadow var(--uggov-dur-base) var(--uggov-ease-in-out),
+    border-color var(--uggov-dur-fast) var(--uggov-ease-in-out),
+    background-color var(--uggov-dur-fast) var(--uggov-ease-in-out);
+}
+
+/* Feature variant — flat, with a yellow flag bar at the top. */
+.uggov-card--feature {
+  background: var(--uggov-bg-subtle);
+  padding-top: calc(var(--uggov-space-6) + 4px);
+}
+
+.uggov-card--feature::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: var(--uggov-flag-yellow);
+  border-top-left-radius: var(--uggov-radius-md);
+  border-top-right-radius: var(--uggov-radius-md);
+}
+
+.uggov-card--outline {
+  background: transparent;
+  border-color: var(--uggov-border-strong);
+}
+
+.uggov-card--link {
+  cursor: pointer;
+}
+
+.uggov-card--link:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--uggov-shadow-sm);
+  border-color: var(--uggov-border-strong);
+}
+
+.uggov-card--link:hover .uggov-card__arrow {
+  transform: translate(3px, -3px) rotate(-45deg);
+  opacity: 1;
+}
+
+.uggov-card__meta {
+  font-size: var(--uggov-text-xs);
+  font-weight: var(--uggov-weight-semibold);
+  color: var(--uggov-text-muted);
+  text-transform: uppercase;
+  letter-spacing: var(--uggov-tracking-wider);
+}
+
+.uggov-card__heading {
+  font-size: var(--uggov-text-xl);
+  font-weight: var(--uggov-weight-semibold);
+  letter-spacing: var(--uggov-tracking-snug);
+  color: var(--uggov-text);
+  line-height: var(--uggov-leading-snug);
+}
+
+.uggov-card__description {
+  color: var(--uggov-text-muted);
+  line-height: var(--uggov-leading-normal);
+  margin: 0;
+}
+
+.uggov-card__arrow {
+  position: absolute;
+  top: var(--uggov-space-6);
+  right: var(--uggov-space-6);
+  color: var(--uggov-text-muted);
+  font-size: var(--uggov-text-lg);
+  opacity: 0.45;
+  transition:
+    transform var(--uggov-dur-base) var(--uggov-ease-spring),
+    opacity var(--uggov-dur-fast);
+}

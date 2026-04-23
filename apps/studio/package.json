@@ -1,0 +1,26 @@
+{
+  "name": "@ug-gov/studio",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "sanity dev",
+    "start": "sanity start",
+    "build": "sanity build",
+    "deploy": "sanity deploy",
+    "typecheck": "tsc --noEmit",
+    "clean": "rm -rf dist .sanity .turbo"
+  },
+  "dependencies": {
+    "@sanity/vision": "3.99.0",
+    "@ug-gov/content-schemas": "workspace:*",
+    "react": "19.0.0",
+    "react-dom": "19.0.0",
+    "sanity": "3.99.0",
+    "styled-components": "6.1.15"
+  },
+  "devDependencies": {
+    "@types/react": "19.0.0",
+    "typescript": "5.7.3"
+  }
+}

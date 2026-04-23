@@ -1,0 +1,17 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(git init *)",
+      "Bash(pnpm -v)",
+      "Bash(pnpm install *)",
+      "Bash(1)",
+      "Bash(pnpm -F @ug-gov/frontend build)",
+      "Bash(pnpm -F @ug-gov/studio typecheck)",
+      "Bash(pnpm exec *)",
+      "Bash(tee /tmp/build.log)",
+      "Bash(kill 52997)",
+      "Bash(echo \"exit=$?\")",
+      "Bash(NEXT_TELEMETRY_DEBUG=1 pnpm exec next build)"
+    ]
+  }
+}
